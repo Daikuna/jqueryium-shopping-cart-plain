@@ -21,7 +21,7 @@
     <div id = "title" class = "container">
     <h1> Shopping Cart </h1>
     </div>
-    <div id = "product-list" class ="container">
+    <div id = "item-list" class ="container">
       <div class ='row item'>
         <div class = 'item-name col-xs-3'>
           Salmon 
@@ -49,16 +49,16 @@
           <input id="price" placeholder = "$5.00">
         </div>
         <div class = "col-xs-1">
-          <button id="insert"><script>addItem()</script>Add</button>
+          <button id="insert">Add</button>
           
         </div>
       </div>
       <div class = "row">
         <div class = "col-xs-3">
-        <h1 class = "total-price">Total: </h1>
+        <h1 class = "total-price-label">Total: </h1>
         </div>
-        <div class = "col-xs-3">
-        <h1>$   </h1>
+        <div class = "col-xs-3" id = 'total-price'>
+        <h1>$--.--</h1>
       </div>
         </div>
       </div>
