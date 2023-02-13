@@ -1,0 +1,49 @@
+body {
+  height: 100%;
+  color: rgb(42, 87, 102) ;
+  font-family: 'Calibri';
+}
+
+#total-price, .total-price-label {
+  display: inline-block;
+}
+
+#total-price {
+  margin-left: 30px;
+  font-size: 36px;
+}
+
+.quantity, #name {
+  color: black;
+}
+
+.delete{
+  color: grey;
+}
+
+.new {
+  margin-top: 20px;
+}
+
+#insert {
+  background-color: #008147;
+  color: #fff;
+}
+
+#insert:hover {
+  background-color: #0461a0;
+}
+
+.delete {
+    border: 0;
+    padding: 4px 8px;
+    background-color: rgb(151, 24, 24);
+    color: #fff;
+    font-family: $font-bold;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+
+  .delete:hover {
+    background-color: rgb(145, 58, 58);
+  }

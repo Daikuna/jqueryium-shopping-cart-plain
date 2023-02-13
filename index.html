@@ -18,29 +18,26 @@
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    <div id = "title" class = "container">
-    <h1> Shopping Cart </h1>
-    </div>
-    <div id = "item-list" class ="container">
-      <div class ='row item'>
-        <div class = 'item-name col-xs-3'>
-          Salmon 
-        </div>
-        <div class = 'item-price col-xs-3'>
-          $60.00 
-        </div>
-        <div class ='item-qty col-xs-3'>            
+    <section class="container">
+      <div class="row">
+          <div class="cart-content col-xs-12">
+              <h1>Shopping Cart</h1>
+          </div>
+      </div>
+  </section>
+  <section id="item-list" class="container">
+      <div class="row item">
+          <div class="item-name col-xs-3">Salmon</div>
+          <div class="item-price col-xs-3">$60.00</div>
+          <div class="item-qty col-xs-3">
               <label>QTY</label>
               <input class="quantity" type="number">
           </div>
-        <div class = "col-xs-1"> 
-          <button class="delete">Delete</button>
-        </div>
-        <div class = "item-subtotal col-xs-2">$
-
-        </div>
-        </div>
-      
+          <div class="col-xs-1">
+              <button class="delete">Delete</button>
+          </div>
+          <div class="item-subtotal col-xs-2">$--.--</div>
+      </div>      
       <div class = "row item new">
         <div class ="col-xs-3">
           <input id = "name" placeholder = "Ham">
@@ -53,13 +50,11 @@
           
         </div>
       </div>
-      <div class = "row">
-        <div class = "col-xs-3">
-        <h1 class = "total-price-label">Total: </h1>
-        </div>
-        <div class = "col-xs-3" id = 'total-price'>
-        <h1>$--.--</h1>
-      </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="total-price-label">Total Price: </h1>
+            <div id="total-price">$--.--</div>
+          </div>
         </div>
       </div>
     </div>
