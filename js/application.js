@@ -4,6 +4,10 @@ $(document)
         var total = 0;
 
         var sum = function () {
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            });
             var prices = $('.item-price');
             var qty = $('.quantity');
             total = 0;
@@ -11,22 +15,26 @@ $(document)
             for (i = 0; i < qty.length; i++) {
                 var price = Number($(prices[i])
                     .text()
-                    .replace(/\$/, ''));
+                   .replace(/\$/, ''));
+                   //.replace(/\./, ''));
+                
                 var subtotal = (Number($(qty[i])
                     .val())) * price;
+                var convSubtotal = formatter.format(subtotal);
                 if (subtotal != 0) {
                     $($('.item-subtotal')[i])
-                        .text("$" + subtotal);
+                        .text(convSubtotal);
                 } else {
                     $($('.item-subtotal')[i])
                         .text("$--.--");
                 }
-                total += subtotal
+                total += subtotal;
+                var finalTotal = formatter.format(total);
             }
 
             $('#total-price')
-                .text("$ " + total);
-            var addspace = "";
+                .text(finalTotal);
+            /*var addspace = "";
             var spaces = total.toString();
             spaces = spaces.length;
             spaces = 12 - spaces;
@@ -37,9 +45,9 @@ $(document)
                 $('#display')
                     .val("$" + addspace + total)
                     .change();
-            }
-            return total;
-        }
+            }*/
+            //return total;
+        } 
 
         var addProduct = function (name, price) {
             name = name.charAt(0)
@@ -49,7 +57,7 @@ $(document)
                 <div class="item-name col-xs-3"> \ ' + name + '\
                 </div> \
                 <div class="item-price col-xs-3"> \
-                $' + price + '.00 \
+                $' + price + ' \
                 </div> \
                 <div class="item-qty col-xs-3"> \
                 <label>QTY</label> \
@@ -97,10 +105,13 @@ $(document)
 
         $(document)
             .on('click', '.delete', function () {
+                if(window.confirm("Are you sure?")){
                 $(this)
                     .parents('.row')
                     .remove();
                 sum();
+                }
+                ;
             });
 
 
