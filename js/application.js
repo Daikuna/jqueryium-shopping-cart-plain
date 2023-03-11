@@ -16,7 +16,6 @@ $(document)
                 var price = Number($(prices[i])
                     .text()
                    .replace(/\$/, ''));
-                   //.replace(/\./, ''));
                 
                 var subtotal = (Number($(qty[i])
                     .val())) * price;
@@ -34,20 +33,8 @@ $(document)
 
             $('#total-price')
                 .text(finalTotal);
-            /*var addspace = "";
-            var spaces = total.toString();
-            spaces = spaces.length;
-            spaces = 12 - spaces;
-            for (i = 0; i < spaces; i++) {
-                addspace += " ";
-            }
-            if (total != 0) {
-                $('#display')
-                    .val("$" + addspace + total)
-                    .change();
-            }*/
-            //return total;
         } 
+            
 
         var addProduct = function (name, price) {
             name = name.charAt(0)
@@ -105,7 +92,7 @@ $(document)
 
         $(document)
             .on('click', '.delete', function () {
-                if(window.confirm("Are you sure?")){
+                if(window.confirm("Are you sure you want to delete this?")){
                 $(this)
                     .parents('.row')
                     .remove();
